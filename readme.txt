@@ -1,2 +1,0 @@
-Members: Jared Zeman
-Languages:
