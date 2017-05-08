@@ -30,5 +30,6 @@ Not necisarly complete unique currently but features of the language advertised 
    3. Encapsulation
        > Ability to hide data within a structure
    4. hybrid language
+          > able act like a oop language and something more akin to C
    ### Name spaces
-       > able act like a oop language and something more akin to C
+
