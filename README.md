@@ -48,14 +48,54 @@ Not necisarly complete unique currently but features of the language advertised 
      ```antlr
         partial class example {
          ...
-     }```
+     }
+     ```
+   3. Constructing/initializing
+     1. to initialize a class the keyword new must be used on the identifier in which case the constructor will be used. The defualt constructor is used unless you create one in the class.
+     ```antlr
+     new example();
+     ```
+   4. Destructing/de-initializing
+     1. You can free memory taken by an instance by implementing destructors in C#
 ### Instance reference name in data type
+ - C#
+   1. "this" is used to refrence the class that you are currently in.
 ### Properties
+ - C#
+   1. getters and setters are implemented in C#
+     ```antlr
+     public string getterSetter { get; set; }
+     ```
+      1. backing variables is done automaticly in compile time so
+       
+       ```
+       private string getterSetter;
+       public string GetterSetter
+       {
+          get {return getterSetter;}
+          set {getterSetter = setter;}
+       }
+       ```
+       
+       is the same as the shorthand example
 ### Interfaces / protocols 
+ - C#
+   1. C# supports interfaces
+   2. C# interfaces can inherit from multiple other interfaceses and be implimented by a class or struct who can impliment multiple interfaceses.
+     1. memebers of an interface must be public
+   3. An interface is used as a contract that forces those that impliment to adhere to it.
 ### Inheritance / extension
+ - C#
+   1. C# supports inheritance of only one class
+   2. extensions are implemented though extension methods. They are made useing a static class in which the class you want to extend is brought into scope with the namespace.
 ### Memory management 
-### Comparisons of references and values 
+### Comparisons of references and values
+ - C#
+   1. C# == can be used to compare value equality for simple data types. for complex data types the Equal() method is prefered though if both are values compared are explecitly the same type == can still be used. ReferenceEquals() can be used to compare the reference of two objects
 ### Null/nil references 
+ - C#
+   1. C# uses null and it is the defualt value for refrence types. Can be used for value types if an optional is used on the type.
+   2. C# has null exeptions 
 ### Errors and exception handling
 ### Lambda expressions, closures, or functions as types
 ### Implementation of listeners and event handlers
