@@ -30,6 +30,36 @@ Not necisarly complete unique currently but features of the language advertised 
    3. Encapsulation
        > Ability to hide data within a structure
    4. hybrid language
-          > able act like a oop language and something more akin to C
-   ### Name spaces
-
+       > able act like a oop language and something more akin to C
+### Name spaces
+   
+### Types
+ - C#
+   1. C# supports the following types
+       1. 
+   2. Both refrence and value types are supported
+   3. Value types can be created though the struct type
+### Classes
+ - C#
+   1. Classes in C#
+     > A class is a data structure that may contain data members (constants and fields), function members (methods, properties, events, indexers, operators, instance constructors, destructors and static constructors), and nested types.
+   2. Create a new class
+     1. to create a new class a class decleration is used which is an optional attribute, an optional class modifier, an optional partial modifier, the keyword class, an identifier that names the class, an optional type parameter list, an optional base class specification, an optional type constraint clause, a class body, and an optional semicolon
+     ```antlr
+        partial class example {
+         ...
+     }```
+### Instance reference name in data type
+### Properties
+### Interfaces / protocols 
+### Inheritance / extension
+### Memory management 
+### Comparisons of references and values 
+### Null/nil references 
+### Errors and exception handling
+### Lambda expressions, closures, or functions as types
+### Implementation of listeners and event handlers
+### Singleton
+### Procedural programming 
+### Functional programming 
+### Multithreading
