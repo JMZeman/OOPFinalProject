@@ -35,10 +35,11 @@ Not necisarly complete unique currently but features of the language advertised 
    
 ### Types
  - C#
-   1. C# supports the following types
-       1. 
+   1. C# supports simple data types like book, int, float, and also data types such as struct
    2. Both refrence and value types are supported
    3. Value types can be created though the struct type
+ - C++
+   1. By default C++ classes are value types though you can force it to become a refrence type by disable copying
 ### Classes
  - C#
    1. Classes in C#
@@ -46,20 +47,37 @@ Not necisarly complete unique currently but features of the language advertised 
    2. Create a new class
      1. to create a new class a class decleration is used which is an optional attribute, an optional class modifier, an optional partial modifier, the keyword class, an identifier that names the class, an optional type parameter list, an optional base class specification, an optional type constraint clause, a class body, and an optional semicolon
      ```antlr
-        partial class example {
+        partial class Example {
          ...
      }
      ```
    3. Constructing/initializing
      1. to initialize a class the keyword new must be used on the identifier in which case the constructor will be used. The defualt constructor is used unless you create one in the class.
      ```antlr
-     new example();
+     new Example();
      ```
    4. Destructing/de-initializing
      1. You can free memory taken by an instance by implementing destructors in C#
+     
+ - C++
+   1. A class in C++ is a blueprint for a data type
+   2. It is created by using the keyword "class" followed by a identifier then a body ended by either a semicolon or a list of declarations.
+     ```antlr
+     class Example
+     {
+     ...
+     }
+     ```
+   3. initialized by declaring a variable of that class. Uses a constructor if there is one.
+     ```antlr
+     Example example;
+     ```
+   4. Deconstructors are created as a method in the class
 ### Instance reference name in data type
  - C#
    1. "this" is used to refrence the class that you are currently in.
+- C#
+   1. "this" is a refrence to itself
 ### Properties
  - C#
    1. getters and setters are implemented in C#
@@ -78,27 +96,46 @@ Not necisarly complete unique currently but features of the language advertised 
        ```
        
        is the same as the shorthand example
+ - C++
+   1. getters and setters must be written
 ### Interfaces / protocols 
  - C#
    1. C# supports interfaces
    2. C# interfaces can inherit from multiple other interfaceses and be implimented by a class or struct who can impliment multiple interfaceses.
      1. memebers of an interface must be public
    3. An interface is used as a contract that forces those that impliment to adhere to it.
+ - C++
+   1. Interfaces in C++ are implimented using abstract classes
+   2. to be used the abstract class needs to be instantiated and implement all of its functions
+   ```antlr
+   virtual double example() = 0;
+   ```
 ### Inheritance / extension
  - C#
    1. C# supports inheritance of only one class
    2. extensions are implemented though extension methods. They are made useing a static class in which the class you want to extend is brought into scope with the namespace.
+   3. A abstract class is made by declaring one of its functions as pure virtual by setting a function to 0
+ - C++
+   1. C++ may inherit from multiple classes
+   2. C++ does not have extensions and you must create a another class to inherite from or use a factory to have similar capabilities.
+### Reflection
 ### Memory management 
 ### Comparisons of references and values
  - C#
    1. C# == can be used to compare value equality for simple data types. for complex data types the Equal() method is prefered though if both are values compared are explecitly the same type == can still be used. ReferenceEquals() can be used to compare the reference of two objects
+ - C++
+   1. == is prefered to to compare values.
 ### Null/nil references 
  - C#
    1. C# uses null and it is the defualt value for refrence types. Can be used for value types if an optional is used on the type.
    2. C# has null exeptions 
+ - C++
+   1. Uses NULL which evaluates to 0 or a null pointer value
 ### Errors and exception handling
  - C#
    1. Errors are handled using a try catch clause with an error causing the program to look for a catch clause. Errors must be represented by an instance class.
+ - C++
+   1. Errors are handled manualy though a try catch clause with a exeption object used as an operand
 ### Lambda expressions, closures, or functions as types
  - C#
    1. Lambda expressions use a =>
@@ -107,7 +144,11 @@ Not necisarly complete unique currently but features of the language advertised 
         ```
         means x is x squared
    2. C# uses delegates to pass functions as types wich allows you to pass a function as a parameter.
-   
+ - C++
+   1. C++ does have lambda expressions written like
+        ```antlr
+        [](int x, int y)
+        ```
 ### Implementation of listeners and event handlers
  - C#
    1. 
@@ -140,13 +181,14 @@ Not necisarly complete unique currently but features of the language advertised 
             }
         }
     } 
-```
+    ```
 
 Which is thread safe
 
    2. There is also a pattern for lazy [implimentation](http://csharpindepth.com/Articles/General/Singleton.aspx)
-    ```antlr    
-   public sealed class Singleton
+   
+    ```antlr
+    public sealed class Singleton
     {
         private static readonly Lazy<Singleton> lazy =
             new Lazy<Singleton>(() => new Singleton());
@@ -157,7 +199,26 @@ Which is thread safe
         {
         }
     } 
-    
+    ``` 
+ - C++
+   1. Singletons can be implimented using a [pattern](http://stackoverflow.com/questions/1008019/c-singleton-design-pattern/1008289#1008289) C++11 automaticly makes it thread safe.
+    ```antlr
+      class S
+    {
+       public:
+           static S& getInstance()
+           {
+               static S    instance; 
+               return instance;
+            }
+       private:
+            S() {} 
+            S(S const&); 
+           void operator=(S const&);
+        public:
+            S(S const&)               = delete;
+            void operator=(S const&)  = delete;
+    };
     ```
     
 ### Procedural programming 
