@@ -222,7 +222,22 @@ Which is thread safe
     ```
     
 ### Procedural programming 
+ - C#
+   1 focused more one oop paragram and shows much less influence of procedural compared to C++
+ - C++
+   1. originally designed to be able to code like C in addition to oop so it still is able to code this way and shows influince from it.
+   2. Considered a procedural language
 ### Functional programming 
+ - C#
+   1. has implimented things like passing higher order functions, generics, and anynomous types
+   2. Rather imperative and too mutable in its data to be pure
+   3. sometimes considered an impure functional language
+ - C++
+   1. addes some features of Functional programming style such as constructs
+   2. still lacks inherite lazy and pure features of pure functional languages
+   3. sometimes considered impure functional language
 ### Multithreading
  - C#
    1. C# has threads wich is how multitasking is acomplished. by creating multiple threads it allows the programmer to run things in parallel
+ - C++
+   1. C++ uses multithreading to accomplish miltitasking
