@@ -32,7 +32,12 @@ Not necisarly complete unique currently but features of the language advertised 
    4. hybrid language
        > able act like a oop language and something more akin to C
 ### Name spaces
-   
+- C#
+  1. used to define scope
+  2. can declare another namespace inside.
+ - C++
+   1. Used to define a scope for identifiers
+   2. typacly declared in the header file
 ### Types
  - C#
    1. C# supports simple data types like book, int, float, and also data types such as struct
@@ -119,7 +124,19 @@ Not necisarly complete unique currently but features of the language advertised 
    1. C++ may inherit from multiple classes
    2. C++ does not have extensions and you must create a another class to inherite from or use a factory to have similar capabilities.
 ### Reflection
-### Memory management 
+ - C#
+   1. allows access to a type at runtime
+   2. Commonly used to get metadata and to build new types at runtime
+ - C++
+   1. Used to get metadata
+   2. GetType is used for Reflection otherwise it is not implimented in C++
+### Memory management
+ - C++
+   1. garbage collectors exist and are supported but are not inherit in the language
+   2. management mostly falls on the programer.
+   3. more simple than C as it does the malloc itself
+ - C#
+   1. has garbage collectors that clean up memory if there is no refrence and a threshold for memory has been passed
 ### Comparisons of references and values
  - C#
    1. C# == can be used to compare value equality for simple data types. for complex data types the Equal() method is prefered though if both are values compared are explecitly the same type == can still be used. ReferenceEquals() can be used to compare the reference of two objects
