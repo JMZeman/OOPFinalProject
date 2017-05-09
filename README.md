@@ -166,9 +166,6 @@ Not necisarly complete unique currently but features of the language advertised 
         ```antlr
         [](int x, int y)
         ```
-### Implementation of listeners and event handlers
- - C#
-   1. 
 ### Singleton
  - C#
    1. Singletons are implimented via a [pattern](http://csharpindepth.com/Articles/General/Singleton.aspx)
