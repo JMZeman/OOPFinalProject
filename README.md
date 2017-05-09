@@ -66,9 +66,9 @@ Not necisarly complete unique currently but features of the language advertised 
      ```antlr
      public string getterSetter { get; set; }
      ```
-      1. backing variables is done automaticly in compile time so
-       
-       ```
+   2. backing variables is done automaticly in compile time so
+   
+       ```antlr
        private string getterSetter;
        public string GetterSetter
        {
@@ -97,9 +97,71 @@ Not necisarly complete unique currently but features of the language advertised 
    1. C# uses null and it is the defualt value for refrence types. Can be used for value types if an optional is used on the type.
    2. C# has null exeptions 
 ### Errors and exception handling
+ - C#
+   1. Errors are handled using a try catch clause with an error causing the program to look for a catch clause. Errors must be represented by an instance class.
 ### Lambda expressions, closures, or functions as types
+ - C#
+   1. Lambda expressions use a =>
+        ```antlr
+        x => x * x
+        ```
+        means x is x squared
+   2. C# uses delegates to pass functions as types wich allows you to pass a function as a parameter.
+   
 ### Implementation of listeners and event handlers
+ - C#
+   1. 
 ### Singleton
+ - C#
+   1. Singletons are implimented via a [pattern](http://csharpindepth.com/Articles/General/Singleton.aspx)
+    
+    ```antlr   
+   public sealed class Singleton
+    {
+    private static Singleton instance = null;
+    private static readonly object padlock = new object();
+
+    Singleton()
+    {
+    }
+
+        public static Singleton Instance
+        {
+            get
+            {
+                lock (padlock)
+                {
+                    if (instance == null)
+                    {
+                        instance = new Singleton();
+                    }
+                    return instance;
+                }
+            }
+        }
+    } 
+```
+
+Which is thread safe
+
+   2. There is also a pattern for lazy [implimentation](http://csharpindepth.com/Articles/General/Singleton.aspx)
+    ```antlr    
+   public sealed class Singleton
+    {
+        private static readonly Lazy<Singleton> lazy =
+            new Lazy<Singleton>(() => new Singleton());
+    
+        public static Singleton Instance { get { return lazy.Value; } }
+
+        private Singleton()
+        {
+        }
+    } 
+    
+    ```
+    
 ### Procedural programming 
 ### Functional programming 
 ### Multithreading
+ - C#
+   1. C# has threads wich is how multitasking is acomplished. by creating multiple threads it allows the programmer to run things in parallel
